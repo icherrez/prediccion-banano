@@ -20,8 +20,6 @@ En el **LSTM**, los parámetros `n_units` y `dropout` demostraron gran impacto s
 
 Por su parte, en el **XGBoost**, el `learning_rate` tuvo mayor influencia que la `max_depth`. Tasas más conservadoras (0.02–0.03) lograron los menores errores, mientras que profundidades entre 2 y 5 mantuvieron estabilidad estructural.
 
-**Figura 1.** Sensibilidad individual de hiperparámetros en modelos base del SuperLearner (MAPE en validación).  
-![Figura 1](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/sensibilidad_hiperparametros.png)
 
 | Hiperparámetro | Modelo | Nivel de Sensibilidad | Valor Actual | Valor Óptimo | Mejora Potencial (±%) |
 |----------------|--------|-----------------------|---------------|---------------|------------------------|
@@ -60,8 +58,6 @@ En el **MLP**, se identificó una **interacción negativa entre `learning_rate_i
 
 En el **XGBoost**, la interacción entre `max_depth` y `learning_rate` fue moderada; las combinaciones óptimas (lr=0.01–0.02, depth=2–3) promovieron una convergencia estable y redujeron el sobreajuste.
 
-**Figura 3.** Mapas de calor de interacción de hiperparámetros en los modelos MLP y XGBoost.  
-![Figura 3](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/interacciones_heatmap.png)
 
 ---
 
