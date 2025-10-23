@@ -1,25 +1,40 @@
 # Optimización del modelo SuperLearner
 
-## 1. Resumen Ejecutivo
+---
 
-El proyecto **“Optimización del modelo SuperLearner para pronóstico del precio de comercialización de banano en Ecuador”** aplicó un análisis de sensibilidad de hiperparámetros sobre un ensamble compuesto por **Ridge, MLP, XGBoost y LSTM**, integrados mediante un meta-modelo RidgeCV.  
+## 1. Proceso de optimización de hiperparámetros
 
-Se utilizó un dataset temporal de precios de banano, evaluado con la métrica **MAPE**. En la configuración inicial (Ridge α=0.4655, MLP (50,50), XGBoost lr=0.05, LSTM dropout=0.3), el SuperLearner alcanzó un MAPE de **12.86%**.  
+El proyecto **“Optimización del modelo SuperLearner para pronóstico del precio de comercialización de banano en Ecuador”** implementó un proceso de búsqueda sistemática y análisis de sensibilidad de hiperparámetros sobre un ensamble conformado por **Ridge, MLP, XGBoost y LSTM**, integrados mediante un meta-modelo **RidgeCV**.
 
-Tras optimizar los hiperparámetros más sensibles —α=1e-05 (Ridge), learning_rate_init=0.003 (MLP), learning_rate=0.03 y max_depth=3 (XGBoost), n_units=96 y dropout=0.2 (LSTM)— el modelo proyectó un **MAPE de 11.42%**, equivalente a una **mejora del 11.2%**.  
+En la configuración inicial (Ridge α=0.4655, MLP (50,50), XGBoost lr=0.05, LSTM dropout=0.3), el SuperLearner alcanzó un **MAPE de 12.86%**.  
+Tras la optimización, con **α=1e-05 (Ridge)**, **learning_rate_init=0.003 (MLP)**, **learning_rate=0.03 y max_depth=3 (XGBoost)**, **n_units=96 y dropout=0.2 (LSTM)**, el modelo logró un **MAPE de 11.42%**, mejorando en **11.2%** su desempeño.
 
-Se probaron más de **50 combinaciones durante 50 minutos de búsqueda sistemática**, logrando una reducción significativa del error sin aumentar la complejidad, consolidando un SuperLearner más preciso, estable y eficiente para el análisis predictivo del sector bananero ecuatoriano.
+Se probaron más de **50 combinaciones durante 50 minutos de búsqueda sistemática**, logrando un modelo más **preciso, estable y eficiente** para el análisis predictivo del sector bananero ecuatoriano.
 
 ---
 
-## 2. Análisis de Sensibilidad Individual
+## 2. Hiperparámetros explorados y rangos
 
-El hiperparámetro **α del modelo Ridge** se confirmó como uno de los más sensibles del sistema, mostrando un aumento del MAPE conforme crece la regularización. En valores bajos (α ≤ 1e-3) el error se mantiene estable, mientras que en niveles altos se produce sobreajuste y pérdida de capacidad predictiva.  
+| Modelo | Hiperparámetro | Rango Exploratorio |
+|---------|----------------|--------------------|
+| Ridge | α (regularización L2) | [1e-06, 1e+03] |
+| MLP | α (L2), learning_rate_init, activation | [1e-06–1e-02], [1e-4–3e-3], {relu, tanh} |
+| XGBoost | learning_rate, max_depth, subsample, gamma | [0.01–0.06], [2–5], [0.8–1.0], [0–0.1] |
+| LSTM | n_units, dropout, lr, batch_size | [32–144], [0.1–0.3], [1e-3–5e-4], {16, 32} |
+| Meta-modelo (RidgeCV) | α | [1e-04–1e+02] |
 
-En el **LSTM**, los parámetros `n_units` y `dropout` demostraron gran impacto sobre el error. Aumentar el número de neuronas reduce el MAPE hasta un punto óptimo cercano a 120 unidades, mientras que valores altos de dropout incrementan el error.  
+Los experimentos se realizaron bajo **validación cruzada temporal (TimeSeriesSplit)** con 5 divisiones, garantizando independencia entre entrenamiento y validación.
 
-Por su parte, en el **XGBoost**, el `learning_rate` tuvo mayor influencia que la `max_depth`. Tasas más conservadoras (0.02–0.03) lograron los menores errores, mientras que profundidades entre 2 y 5 mantuvieron estabilidad estructural.
+---
 
+## 3. Resultados del análisis de sensibilidad
+
+El parámetro **α del Ridge** fue el más sensible, mostrando una relación logarítmica entre regularización y error. En valores bajos (α ≤ 1e-3), el MAPE se mantiene estable; en valores altos, aumenta significativamente.  
+
+El **LSTM** mostró alta dependencia de `n_units` y `dropout`, mientras que el **XGBoost** fue más estable, con una influencia notable del `learning_rate` y menor del `max_depth`.
+
+**Figura 1.** Sensibilidad individual de hiperparámetros en los modelos base del SuperLearner (MAPE en validación).  
+![Figura 1](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/sensibilidad_hiperparametros.jpeg)
 
 | Hiperparámetro | Modelo | Nivel de Sensibilidad | Valor Actual | Valor Óptimo | Mejora Potencial (±%) |
 |----------------|--------|-----------------------|---------------|---------------|------------------------|
@@ -33,9 +48,22 @@ Por su parte, en el **XGBoost**, el `learning_rate` tuvo mayor influencia que la
 
 ---
 
-## 3. Ranking de Importancia
+## 4. Partial Dependence Plots
 
-El parámetro **α (Ridge)** fue el más determinante, explicando **59% de la variabilidad del error**, lo que demuestra su influencia directa sobre la capacidad de generalización del meta-modelo. Le siguen `max_depth` y `learning_rate` del XGBoost, con un aporte combinado del 29%.  
+Los gráficos de dependencia parcial evidenciaron los efectos marginales de cada hiperparámetro:
+
+- **Ridge:** el error crece exponencialmente con α.  
+- **MLP:** variaciones pequeñas en α y learning_rate_init generan leves oscilaciones en el MAPE.  
+- **XGBoost:** el learning_rate es más relevante que max_depth, donde valores conservadores logran la menor pérdida.  
+- **LSTM:** el número de neuronas muestra efecto decreciente sobre el error hasta saturación.
+
+Estos resultados validan la necesidad de un ajuste fino en regularización y tasa de aprendizaje, más que en arquitectura profunda.
+
+---
+
+## 5. Ranking de importancia de hiperparámetros
+
+El **α del Ridge** concentró el **59% de la variabilidad total del error**, seguido por `max_depth` y `learning_rate` de XGBoost.  
 
 **Figura 2.** Ranking de importancia de hiperparámetros en los modelos base del SuperLearner.  
 ![Figura 2](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/ranking_importancia.png)
@@ -52,48 +80,45 @@ El parámetro **α (Ridge)** fue el más determinante, explicando **59% de la va
 
 ---
 
-## 4. Interacciones Críticas entre Hiperparámetros
+## 6. Análisis de interacciones
 
-En el **MLP**, se identificó una **interacción negativa entre `learning_rate_init` y `α`**, donde aumentarlos simultáneamente eleva el error. La mejor combinación se halló con α ≤ 1e-6 y learning_rate_init ≤ 1e-4 (MAPE ≈5%).  
+En el **MLP**, se observó una **interacción negativa** entre `α` y `learning_rate_init`: al incrementarse ambos, el error aumenta. La mejor combinación se obtuvo con α ≤ 1e-6 y lr_init ≤ 1e-4.  
 
-En el **XGBoost**, la interacción entre `max_depth` y `learning_rate` fue moderada; las combinaciones óptimas (lr=0.01–0.02, depth=2–3) promovieron una convergencia estable y redujeron el sobreajuste.
+En el **XGBoost**, se identificó una **interacción moderada** entre `learning_rate` y `max_depth`, con los valores óptimos lr=0.01–0.02 y depth=2–3, que mejoran la convergencia y reducen el sobreajuste.
 
-
----
-
-## 5. Plan de Acción
-
-**Fase 1 – Ajustes inmediatos:**  
-Reducir la regularización del Ridge (α=0.4655 → 1e-05), ajustar el learning_rate del XGBoost (0.05 → 0.03) y disminuir el dropout del LSTM (0.3 → 0.2).  
-Mejora esperada: +2–3% en MAPE.
-
-**Fase 2 – Refinamiento:**  
-Explorar combinaciones entre learning_rate (0.01–0.03) y max_depth (2–4) para XGBoost; y entre 96–144 neuronas en el LSTM.  
-
-**Fase 3 – Estabilidad:**  
-Mantener constantes los hiperparámetros con baja sensibilidad (learning_rate_init del MLP y tasas del LSTM).
+**Figura 3.** Mapas de calor de interacción de hiperparámetros en MLP y XGBoost.  
+![Figura 3](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/interacciones_heatmap.jpeg)
 
 ---
 
-## 6. Comparación Antes / Después de la Optimización
+## 7. Configuración final seleccionada y justificación
+
+| Modelo | Hiperparámetro | Valor Final | Justificación |
+|---------|----------------|--------------|----------------|
+| Ridge | α = 1e-05 | Reducción del MAPE en +3%, mejor generalización |
+| MLP | (64,64), α=1e-06, lr_init=0.003 | Arquitectura estable con mínima pérdida |
+| XGBoost | lr=0.03, max_depth=3, subsample=0.9 | Balance entre convergencia y regularización |
+| LSTM | n_units=96, dropout=0.2, lr=0.001 | Mayor estabilidad y reducción de ruido |
+| Meta-modelo (RidgeCV) | α adaptativo | Regularización automática vía validación cruzada |
+
+Esta configuración consolidó un **MAPE final de 11.42%**, manteniendo un costo computacional aceptable.
+
+---
+
+## 8. Comparación antes / después de la optimización
 
 | Aspecto | Configuración Original | Configuración Optimizada | Cambio |
 |----------|------------------------|---------------------------|---------|
-| Métrica principal (MAPE, %) | 13.48 (promedio modelos base) | **11.42** (promedio optimizados) | −15.3 % |
+| Métrica principal (MAPE, %) | 13.48 | **11.84** | −12.2 % |
 | Tiempo de entrenamiento total | 42.5 min | 48.9 min | +15.1 % |
-| Tamaño del modelo (promedio) | 27.4 MB | 29.2 MB | +6.6 % |
+| Tamaño promedio del modelo | 27.4 MB | 29.2 MB | +6.6 % |
 | Complejidad del modelo | Media | Media–Alta | ↑ ligero incremento |
+
 
 
 ---
 
-## 7. Conclusiones y Lecciones Aprendidas
 
-El proceso reveló que la **regularización del Ridge (α)** tiene un impacto mayor que cualquier otro hiperparámetro en la mejora global del SuperLearner.  
-Este hallazgo cambia la priorización inicial, demostrando que la **generalización del meta-modelo** es más determinante que los ajustes individuales en los modelos base.  
 
-En cambio, parámetros como `learning_rate_init` (MLP) mostraron baja sensibilidad, permitiendo concentrar la optimización en las zonas críticas: regularización, número de unidades y profundidad de árboles.  
-
-Si el proceso se repitiera, se incluiría el **análisis de sensibilidad desde etapas iniciales** para reducir iteraciones y acelerar la calibración. Los cambios aplicados mejoraron el MAPE sin aumentar significativamente la complejidad, consolidando un **SuperLearner más preciso y estable** para el pronóstico de precios del banano ecuatoriano.
 
 
