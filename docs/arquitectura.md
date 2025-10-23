@@ -39,8 +39,7 @@ El meta-modelo de ensamblaje utiliza **RidgeCV** con regularización automática
 
 ## 3. Diagrama de flujo del sistema completo
 
-
-┌──────────────────────┐ │ Carga de datos │ └──────────┬───────────┘ ▼ ┌──────────────────────┐ │ Limpieza y creación │ │ de rezagos (lags) │ └──────────┬───────────┘ ▼ ┌──────────────────────┐ │ Escalado Min-Max │ └──────────┬───────────┘ ▼ ┌────────────────────────────────────────────────────┐ │ Entrenamiento de modelos base: Ridge, MLP, XGB, LSTM │ └──────────┬─────────────────────────────────────────┘ ▼ ┌──────────────────────────┐ │ Generación de predicciones│ │ Out-Of-Fold (OOF) │ └──────────┬───────────────┘ ▼ ┌──────────────────────┐ │ Meta-modelo RidgeCV │ └──────────┬───────────┘ ▼ ┌──────────────────────┐ │ Predicción final │ │ y evaluación (RMSE, │ │ MAE, MAPE) │ └──────────────────────┘
+![Diagrama de flujo](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/flujo_superlearner.png)
 
 ---
 
