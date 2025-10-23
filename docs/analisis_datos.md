@@ -39,31 +39,25 @@ La **prueba de Shapiro-Wilk** (p = 0.000) confirma que la distribución **no es 
 
 ## 3. Visualizaciones del EDA
 
-> Para incorporar gráficos en GitHub, guárdalos en una carpeta del repositorio (por ejemplo, `/images/`) y referencia su ruta en el `.md` con sintaxis Markdown:
->
-> ```markdown
-> ![Histograma de precios](images/histograma_precios.png)
-> ```
-
 A continuación se listan las visualizaciones clave generadas:
 
 1. **Histograma de distribución de precios**  
-   ![Histograma de precios](images/histograma_precios.png)
+![Histograma de precios](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/histograma_precios.png)
 
 2. **Boxplot de precios con outliers**  
-   ![Boxplot de precios](images/boxplot_precios.png)
+![Boxplot de precios](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/boxplot_precios.png)
 
 3. **Serie temporal con outliers detectados por Z-score e IQR**  
-   ![Serie temporal outliers](images/serie_outliers.png)
+![Serie temporal con outliers](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/serie_outliers.png)
 
 4. **Comparativo serie original vs procesada (winsorizing)**  
-   ![Serie original vs procesada](images/serie_winsorizing.png)
+![Serie original vs procesada (winsorizing)](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/serie_winsorizing.png)
 
 5. **Boxplot comparativo antes y después del tratamiento**  
-   ![Boxplot comparativo](images/boxplot_comparativo.png)
+![Boxplot comparativo original vs procesada](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/boxplot_comparativo.png)
 
 6. **Descomposición STL (tendencia, estacionalidad y residuo)**  
-   ![Descomposición STL](images/stl_descomposicion.png)
+![Descomposición STL](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/stl_descomposicion.png)
 
 Estas visualizaciones muestran la concentración de precios entre 6 y 8 USD, valores extremos en 2018 y una tendencia ascendente posterior a 2022.
 
