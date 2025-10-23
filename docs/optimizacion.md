@@ -101,7 +101,7 @@ En el **XGBoost**, se identificó una **interacción moderada** entre `learning_
 | LSTM | n_units=96, dropout=0.2, lr=0.001 | Mayor estabilidad y reducción de ruido |
 | Meta-modelo (RidgeCV) | α adaptativo | Regularización automática vía validación cruzada |
 
-Esta configuración consolidó un **MAPE final de 11.42%**, manteniendo un costo computacional aceptable.
+Esta configuración consolidó un **MAPE final de 11.84%**, manteniendo un costo computacional aceptable.
 
 ---
 
