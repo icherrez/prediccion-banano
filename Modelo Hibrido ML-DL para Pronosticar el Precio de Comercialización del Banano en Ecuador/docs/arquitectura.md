@@ -39,7 +39,7 @@ El meta-modelo de ensamblaje utiliza **RidgeCV** con regularización automática
 
 ## 3. Diagrama de flujo del sistema completo
 
-![Diagrama de flujo](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/flujo_superlearner.png)
+![Diagrama de flujo](https://github.com/icherrez/prediccion-banano/blob/main/images/flujo_superlearner.png)
 
 ---
 
