@@ -49,7 +49,7 @@ Base de datos semanal que integra precios SPOT, variables climáticas y encuesta
 
 **Fuente:** Observatorio Estadístico de Banano – AEBE  
 **Licencia:** Uso académico y gremial, bajo acuerdo de confidencialidad  
-**Link (versión pública):** [Repositorio de datos anonimizados](https://github.com/icherrez/prediccion-banano/tree/main/data)
+**Link (versión pública):** [Repositorio de datos anonimizados](https://github.com/icherrez/prediccion-banano/tree/main/Modelo Hibrido ML-DL para Pronosticar el Precio de Comercialización del Banano en Ecuador/data)
 
 ---
 
