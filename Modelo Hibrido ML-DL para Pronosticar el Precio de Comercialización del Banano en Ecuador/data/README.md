@@ -28,7 +28,7 @@ Este dataset constituye la base principal para el entrenamiento, validación y e
 
 ---
 
-## 🕒 Rango temporal y frecuencia
+## Rango temporal y frecuencia
 
 - **Rango de años:** 2017 – 2025  
 - **Frecuencia:** Semanal  
@@ -37,7 +37,7 @@ Este dataset constituye la base principal para el entrenamiento, validación y e
 
 ---
 
-## 🧾 Ejemplo de datos
+## Ejemplo de datos
 
 | Año | Semana | Precio |
 |-----|---------|--------|
