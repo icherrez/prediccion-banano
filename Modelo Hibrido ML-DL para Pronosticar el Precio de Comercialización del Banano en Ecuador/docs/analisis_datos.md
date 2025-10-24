@@ -42,22 +42,22 @@ La **prueba de Shapiro-Wilk** (p = 0.000) confirma que la distribución **no es 
 A continuación se listan las visualizaciones clave generadas:
 
 1. **Histograma de distribución de precios**  
-![Histograma de precios](https://raw.githubusercontent.com/icherrez/prediccion-banano/blob/main/Modelo%20Hibrido%20ML-DL%20para%20Pronosticar%20el%20Precio%20de%20Comercialización%20del%20Banano%20en%20Ecuador/images/histograma_precios.png)
+![Histograma de precios](https://github.com/icherrez/prediccion-banano/blob/main/images/histograma_precios.png)
 
 2. **Boxplot de precios con outliers**  
-![Boxplot de precios](https://raw.githubusercontent.com/icherrez/prediccion-banano/blob/main/Modelo%20Hibrido%20ML-DL%20para%20Pronosticar%20el%20Precio%20de%20Comercialización%20del%20Banano%20en%20Ecuador/images/boxplot_precios.png)
+![Boxplot de precios](https://github.com/icherrez/prediccion-banano/blob/main/images/boxplot_precios.png)
 
 3. **Serie temporal con outliers detectados por Z-score e IQR**  
-![Serie temporal con outliers](https://raw.githubusercontent.com/icherrez/prediccion-banano/blob/main/Modelo%20Hibrido%20ML-DL%20para%20Pronosticar%20el%20Precio%20de%20Comercialización%20del%20Banano%20en%20Ecuador/images/serie_outliers.png)
+![Serie temporal con outliers](https://github.com/icherrez/prediccion-banano/blob/main/images/serie_outliers.png)
 
 4. **Comparativo serie original vs procesada (winsorizing)**  
-![Serie original vs procesada (winsorizing)](https://raw.githubusercontent.com/icherrez/prediccion-banano/blob/main/Modelo%20Hibrido%20ML-DL%20para%20Pronosticar%20el%20Precio%20de%20Comercialización%20del%20Banano%20en%20Ecuador/images/serie_winsorizing.png)
+![Serie original vs procesada (winsorizing)](https://github.com/icherrez/prediccion-banano/blob/main/images/serie_winsorizing.png)
 
 5. **Boxplot comparativo antes y después del tratamiento**  
-![Boxplot comparativo original vs procesada](https://raw.githubusercontent.com/icherrez/prediccion-banano/blob/main/Modelo%20Hibrido%20ML-DL%20para%20Pronosticar%20el%20Precio%20de%20Comercialización%20del%20Banano%20en%20Ecuador/images/boxplot_comparativo.png)
+![Boxplot comparativo original vs procesada](https://github.com/icherrez/prediccion-banano/blob/main/images/boxplot_comparativo.png)
 
 6. **Descomposición STL (tendencia, estacionalidad y residuo)**  
-![Descomposición STL](https://raw.githubusercontent.com/icherrez/prediccion-banano/blob/main/Modelo%20Hibrido%20ML-DL%20para%20Pronosticar%20el%20Precio%20de%20Comercialización%20del%20Banano%20en%20Ecuador/images/stl_descomposicion.png)
+![Descomposición STL](https://github.com/icherrez/prediccion-banano/blob/main/images/stl_descomposicion.png)
 
 Estas visualizaciones muestran la concentración de precios entre 6 y 8 USD, valores extremos en 2018 y una tendencia ascendente posterior a 2022.
 
