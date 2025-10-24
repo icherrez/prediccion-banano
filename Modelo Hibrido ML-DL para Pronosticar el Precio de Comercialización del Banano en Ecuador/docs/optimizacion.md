@@ -34,7 +34,7 @@ El parámetro **α del Ridge** fue el más sensible, mostrando una relación log
 El **LSTM** mostró alta dependencia de `n_units` y `dropout`, mientras que el **XGBoost** fue más estable, con una influencia notable del `learning_rate` y menor del `max_depth`.
 
 **Figura 1.** Sensibilidad individual de hiperparámetros en los modelos base del SuperLearner (MAPE en validación).  
-![Figura 1](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/sensibilidad_hiperparametros.jpeg)
+![Figura 1](https://github.com/icherrez/prediccion-banano/blob/main/images/sensibilidad_hiperparametros.jpeg)
 
 | Hiperparámetro | Modelo | Nivel de Sensibilidad | Valor Actual | Valor Óptimo | Mejora Potencial (±%) |
 |----------------|--------|-----------------------|---------------|---------------|------------------------|
@@ -66,7 +66,7 @@ Estos resultados validan la necesidad de un ajuste fino en regularización y tas
 El **α del Ridge** concentró el **59% de la variabilidad total del error**, seguido por `max_depth` y `learning_rate` de XGBoost.  
 
 **Figura 2.** Ranking de importancia de hiperparámetros en los modelos base del SuperLearner.  
-![Figura 2](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/ranking_importancia.png)
+![Figura 2](https://github.com/icherrez/prediccion-banano/blob/main/images/ranking_importancia.png)
 
 | Ranking | Hiperparámetro | Importancia (%) | Clasificación | Acción Recomendada |
 |----------|----------------|----------------|----------------|-------------------|
@@ -87,7 +87,7 @@ En el **MLP**, se observó una **interacción negativa** entre `α` y `learning_
 En el **XGBoost**, se identificó una **interacción moderada** entre `learning_rate` y `max_depth`, con los valores óptimos lr=0.01–0.02 y depth=2–3, que mejoran la convergencia y reducen el sobreajuste.
 
 **Figura 3.** Mapas de calor de interacción de hiperparámetros en MLP y XGBoost.  
-![Figura 3](https://raw.githubusercontent.com/icherrez/prediccion-banano/main/images/interacciones_heatmap.jpeg)
+![Figura 3](https://github.com/icherrez/prediccion-banano/blob/main/images/interacciones_heatmap.jpeg)
 
 ---
 
