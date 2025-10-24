@@ -62,10 +62,12 @@ Este dataset está diseñado para su uso en:
 
 ## Licencia y restricciones
 
-El uso de este dataset está sujeto a los términos y condiciones del Observatorio Estadístico de Banano.  
-No se permite la redistribución ni publicación de los datos originales sin autorización expresa.
+> **Nota importante:**  
+> Los datos contenidos en esta carpeta son ficticios y generados con fines exclusivamente demostrativos y académicos.  
+> Aunque se basan en la estructura, variables y rangos observados en el conjunto de datos real proporcionado por el **Observatorio Estadístico de Banano**, no representan información real ni confidencial del sector.
+>
+> Por razones de confidencialidad y cumplimiento de licencias, **no se publican los datos reales**, sino una **versión sintética** que mantiene la coherencia temporal y estadística necesaria para replicar el flujo de trabajo del proyecto.
 
-> © Ovalle y Cherrez (2025). Todos los derechos reservados.
 
 ---
 
