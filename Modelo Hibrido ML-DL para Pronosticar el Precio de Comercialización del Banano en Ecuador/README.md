@@ -105,11 +105,13 @@ pandas, numpy, scikit-learn, xgboost, tensorflow, matplotlib, joblib, openpyxl
 (para interfaz) tkinter – viene incluido en Python estándar en Windows/macOS
 
 **Instalación paso a paso**
--1️. Clonar el repositorio
-git clone https://github.com/<usuario>/<nombre_proyecto>.git
-cd <nombre_proyecto>/app
 
--2️. Crear y activar entorno virtual
+1️. Clonar el repositorio
+
+git clone https://github.com/icherrez/prediccion-banano.git
+cd Modelo Hibrido ML-DL para Pronosticar el Precio de Comercialización del Banano en Ecuador/app
+
+2️. Crear y activar entorno virtual
 
 python -m venv venv
 
@@ -119,10 +121,11 @@ venv\Scripts\activate
 En macOS / Linux
 source venv/bin/activate
 
--3️. Instalar dependencias
+3️. Instalar dependencias
+
 pip install -r requirements.txt
 
--4️. Verificar modelo demo y datos
+4️. Verificar modelo demo y datos
 
 Asegúrate de que exista el archivo:
 
@@ -131,25 +134,27 @@ app/assets/precio_ecuador.xlsx
 
 Este dataset demo se utiliza cuando el usuario elige “Usar datos demo” al iniciar la aplicación.
 
--5️. Ejecutar la aplicación
+5️. Ejecutar la aplicación
 python app.py
-
 
 Aparecerá la ventana principal con la opción de:
 
-Usar datos demo (precio_ecuador.xlsx)
+- Usar datos demo (precio_ecuador.xlsx)
 
-Cargar archivo propio (Excel)
+- Cargar archivo propio (Excel)
 
 El modelo se entrena automáticamente y genera el pronóstico de las siguientes 5 semanas, mostrando tanto métricas como gráficos interactivos.
 
 **Ejemplo de uso**
+
 Ejecutar aplicación
 python app.py
 
-Seleccionar "Usar datos demo"
-Esperar el entrenamiento (~60-120 s)
-Visualizar resultados y gráfico final dentro de la interfaz
+- Seleccionar "Usar datos demo"
+
+- Esperar el entrenamiento (~60-120 s)
+
+- Visualizar resultados y gráfico final dentro de la interfaz
 
 ## Estructura del proyecto
 
