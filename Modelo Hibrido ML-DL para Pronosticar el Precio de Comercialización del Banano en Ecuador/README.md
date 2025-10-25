@@ -188,6 +188,16 @@ Muestra las últimas 5 semanas reales + 5 semanas futuras predichas.
 
 Colores diferenciados por modelo (Ridge, MLP, XGB, LSTM, SuperLearner).
 
+**Descarga del ejecutable**
+
+Puedes probar la aplicación sin necesidad de instalar dependencias.
+
+**[Precio_Banano (.exe)](https://drive.google.com/file/d/1gjrA0ES03Zaizr21elFs2wdhvZGhsD5a/view?usp=sharing)**  
+
+> Versión 1.0 — compilada con PyInstaller (Windows 10/11, Python 3.11).
+>  
+> 💡 Ejecuta el archivo directamente (`Precio_Banano.exe`). No requiere instalación.
+
 ---
 
 ## Estructura del proyecto
