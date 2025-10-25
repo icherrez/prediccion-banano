@@ -94,11 +94,63 @@ La optimización redujo el MAPE en un 11.2%, consolidando un modelo robusto y re
 
 ## Instalación y uso
 
-### Requisitos
-- Python 3.10+  
-- Librerías: `numpy`, `pandas`, `matplotlib`, `scikit-learn`, `xgboost`, `tensorflow`, `seaborn`
+**Requisitos del sistema**
 
-### Instalación
+Sistema operativo: Windows 10/11, macOS o Linux
+
+Python: versión 3.10 o superior
+
+Memoria: ≥ 8 GB RAM (recomendado 16 GB para TensorFlow y XGBoost)
+
+Dependencias principales:
+
+pandas, numpy, scikit-learn, xgboost, tensorflow, matplotlib, joblib, openpyxl
+
+(para interfaz) tkinter – viene incluido en Python estándar en Windows/macOS
+
+**Instalación paso a paso**
+1️. Clonar el repositorio
+git clone https://github.com/<usuario>/<nombre_proyecto>.git
+cd <nombre_proyecto>/app
+
+2️. Crear y activar entorno virtual
+python -m venv venv
+En Windows
+venv\Scripts\activate
+En macOS / Linux
+source venv/bin/activate
+
+3️. Instalar dependencias
+pip install -r requirements.txt
+
+4️. Verificar modelo demo y datos
+
+Asegúrate de que exista el archivo:
+
+app/assets/precio_ecuador.xlsx
+
+
+Este dataset demo se utiliza cuando el usuario elige “Usar datos demo” al iniciar la aplicación.
+
+5️. Ejecutar la aplicación
+python app.py
+
+
+Aparecerá la ventana principal con la opción de:
+
+Usar datos demo (precio_ecuador.xlsx)
+
+Cargar archivo propio (Excel)
+
+El modelo se entrena automáticamente y genera el pronóstico de las siguientes 5 semanas, mostrando tanto métricas como gráficos interactivos.
+
+**Ejemplo de uso**
+Ejecutar aplicación
+python app.py
+
+Seleccionar "Usar datos demo"
+Esperar el entrenamiento (~60-120 s)
+Visualizar resultados y gráfico final dentro de la interfaz
 
 ## Estructura del proyecto
 
