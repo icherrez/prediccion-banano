@@ -35,8 +35,8 @@ Si se utiliza el **ejecutable (.exe)**, no se requiere instalación previa de de
 
 Al ejecutar el programa (`Precio_Banano.exe` o `app.py`), se mostrará la ventana principal con las siguientes opciones:
 
-- 🟢 **Usar datos demo:** carga el dataset `precio_ecuador.xlsx` incluido en `app/assets/`.
-- 📂 **Cargar datos propios:** abre un diálogo para seleccionar un archivo `.xlsx` o `.xls` con tus datos históricos.
+- **Usar datos demo:** carga el dataset `precio_ecuador.xlsx` incluido en `app/assets/`.
+- **Cargar datos propios:** abre un diálogo para seleccionar un archivo `.xlsx` o `.xls` con tus datos históricos.
 
 > **Formato esperado del archivo Excel:**
 > - Columnas: `Año`, `Semana`, `Precio`
