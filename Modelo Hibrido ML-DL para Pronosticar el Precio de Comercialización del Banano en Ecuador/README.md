@@ -194,54 +194,55 @@ Colores diferenciados por modelo (Ridge, MLP, XGB, LSTM, SuperLearner).
 
 Modelo Híbrido ML-DL para Pronosticar el Precio de Comercialización del Banano en Ecuador/
 │
-├── README.md                # Descripción general del proyecto
+├── README.md                      # Descripción general del proyecto
 │
-├── src/                     # Código fuente principal del modelo
-│   ├── __init__.py          # Marca el paquete principal
-│   ├── data_processing.py   # Funciones de carga, limpieza y generación de lags
-│   ├── model.py             # Definición de los modelos (Ridge, MLP, XGB, LSTM, meta-modelo)
-│   ├── train.py             # Script de entrenamiento (OOF, SuperLearner)
-│   ├── evaluate.py          # Funciones de evaluación y métricas
-│   └── utils.py             # Funciones auxiliares (forecast, escalado, etc.)
+├── src/                           # Código fuente principal del modelo
+│   ├── __init__.py                # Marca el paquete principal
+│   ├── data_processing.py         # Funciones de carga, limpieza y generación de lags
+│   ├── model.py                   # Definición de los modelos (Ridge, MLP, XGB, LSTM, meta-modelo)
+│   ├── train.py                   # Script de entrenamiento (OOF, SuperLearner)
+│   ├── evaluate.py                # Funciones de evaluación y métricas
+│   └── utils.py                   # Funciones auxiliares (forecast, escalado, etc.)
 │
-├── app/                     # Aplicación de interfaz gráfica
-│   ├── app.py               # Interfaz principal con Tkinter
-│   ├── requirements.txt     # Dependencias necesarias para ejecutar la app
-│   └── assets/              # Recursos visuales y archivos de demostración
-│       ├── precio_ecuador.xlsx  # Dataset demo usado en modo “Usar datos demo”
+├── app/                           # Aplicación de interfaz gráfica
+│   ├── app.py                     # Interfaz principal con Tkinter
+│   ├── requirements.txt           # Dependencias necesarias para ejecutar la app
+│   └── assets/                    # Recursos visuales y archivos de demostración
+│       ├── precio_ecuador.xlsx    # Dataset demo usado en modo “Usar datos demo”
 │       └── README.md
 │
-├── models/                  # Modelos entrenados (serializados con joblib)
-│   ├── best_model.pkl       # Versión más reciente (TimeSeriesSplit + RidgeCV)
-│   ├── model_v1.pkl         # Versión inicial (Train/Val/Test simple)
-│   └── README.md            # Documentación de los modelos guardados
+├── models/                        # Modelos entrenados (serializados con joblib)
+│   ├── best_model.pkl             # Versión más reciente (TimeSeriesSplit + RidgeCV)
+│   ├── model_v1.pkl               # Versión inicial (Train/Val/Test simple)
+│   └── README.md                  # Documentación de los modelos guardados
 │
-├── data/                    # Datos adicionales no incluidos en assets
-│   ├── README.md            # Explicacion de dataset
-│   └── processed           # Datos procesados
-│       ├── dataset_procesado.xlsx  # Dataset
+├── data/                          # Datos adicionales no incluidos en assets
+│   ├── README.md                  # Explicación del dataset
+│   └── processed/                 # Datos procesados
+│       └── dataset_procesado.xlsx # Dataset limpio y transformado
 │
-├── docs/                     # Documentos principales
-│   ├── analisis_datos.md          # Analisis exploratorio
-│   ├── arquitectura.md            # Arquitectura del modelo hibrido Super Learner
-│   ├── consideraciones_eticas.md  # Analisis de sesgos, privacidad, transparencia, etc.
-│   ├── manual_usuario.md          # Guia para usuarios finales
+├── docs/                          # Documentos principales del proyecto
+│   ├── analisis_datos.md          # Análisis exploratorio
+│   ├── arquitectura.md            # Arquitectura del modelo híbrido SuperLearner
+│   ├── consideraciones_eticas.md  # Análisis de sesgos, privacidad, transparencia, etc.
+│   ├── manual_usuario.md          # Guía para usuarios finales
 │   ├── optimizacion.md            # Optimización de hiperparámetros
-│   └── planificacion.md           # Planificación inicial
+│   └── planificacion.md           # Planificación inicial del proyecto
 │
-├── notebooks/               # Jupyter notebooks
+├── notebooks/                     # Jupyter notebooks
 │   ├── 01_exploracion.ipynb       # Análisis exploratorio de datos (EDA)
 │   ├── 02_preprocesamiento.ipynb  # Limpieza, transformación y generación de lags
 │   ├── 03_modelado.ipynb          # Entrenamiento de los modelos base y meta-modelo
 │   ├── 04_optimizacion.ipynb      # Optimización de hiperparámetros y validación cruzada
-│   └── 05_evaluacion.ipynb        # Evaluación final, métricas y comparación de resulta
+│   └── 05_evaluacion.ipynb        # Evaluación final, métricas y comparación de resultados
 │
-├── tests/                  # Pruebas unitarias
-│   ├── test_data_processing.py       # Procesamiento de datos
-│   ├── test_model.py                 # Pruebas de modelo
-│   └── test_app.py                   # Pruebas interfaz ejecutable
+├── tests/                         # Pruebas unitarias
+│   ├── test_data_processing.py    # Pruebas de funciones de procesamiento de datos
+│   ├── test_model.py              # Pruebas de entrenamiento y predicción
+│   └── test_app.py                # Pruebas de la interfaz ejecutable
 │
-└── LICENSE                  # Tipo de licencia (MIT, Apache 2.0, etc.)
+└── LICENSE                        # Tipo de licencia (MIT, Apache 2.0, etc.)
+
 
 ---
 ## Consideraciones éticas
