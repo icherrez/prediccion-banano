@@ -106,7 +106,7 @@ El gráfico final muestra la continuidad entre los valores reales y los predicho
 |------------|----------------|-----------|
 | “Cannot find XGBoost Library” | El ejecutable no incluye `xgboost.dll` | Reconstruir con PyInstaller y `--collect-binaries xgboost` |
 | “Archivo no válido” | Formato distinto a las columnas esperadas | Revisar estructura del Excel |
-| “Ventana muy pequeña” | Resolución baja del monitor | Maximizar o redimensionar manualmente |
+| “Ventana muy pequeña, no se ven botones” | Resolución baja del monitor | Maximizar o redimensionar manualmente |
 
 ---
 
