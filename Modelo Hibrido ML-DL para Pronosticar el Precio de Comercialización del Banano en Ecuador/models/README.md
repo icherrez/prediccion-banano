@@ -9,8 +9,8 @@ Cada versión incluye los modelos base (`Ridge`, `MLP`, `XGB`, `LSTM`) y un meta
 
 | Archivo | Descripción | Fecha / Origen |
 |----------|--------------|----------------|
-| **best_model.pkl** | Versión más reciente y optimizada del ensemble. Entrenado con todo el histórico disponible usando validación temporal (`TimeSeriesSplit`, 5 folds) y `RidgeCV` como meta‐modelo con regularización automática. | Última actualización: *YYYY-MM-DD* |
-| **model_v1.pkl** | Versión inicial del SuperLearner entrenada con un único split `Train/Val/Test`. Usa `Ridge(alpha=0.01)` como meta‐modelo. Mantenida para reproducibilidad y comparaciones históricas. | Entrenamiento original: *YYYY-MM-DD* |
+| **best_model.pkl** | Versión más reciente y optimizada del ensemble. Entrenado con todo el histórico disponible usando validación temporal (`TimeSeriesSplit`, 5 folds) y `RidgeCV` como meta‐modelo con regularización automática. | Última actualización: *2025-10-03* |
+| **model_v1.pkl** | Versión inicial del SuperLearner entrenada con un único split `Train/Val/Test`. Usa `Ridge(alpha=0.01)` como meta‐modelo. Mantenida para reproducibilidad y comparaciones históricas. | Entrenamiento original: *2025-10-03* |
 
 ---
 
