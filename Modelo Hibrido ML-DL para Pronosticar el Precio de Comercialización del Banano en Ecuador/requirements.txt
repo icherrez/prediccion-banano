@@ -1,1 +1,17 @@
 
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+tensorflow>=2.13.0
+matplotlib>=3.8.0
+openpyxl>=3.1.0
+joblib>=1.3.0
+tkinter ; python_version >= "3.0"
+
+# ===============================================
+# Notas:
+# - Si se usa el ejecutable .exe, no es necesario instalar dependencias manualmente.
+# - Para entorno de desarrollo: `pip install -r requirements.txt`
+# - Para crear ejecutable: 
+#     pyinstaller app/app.py --onefile --noconsole --collect-binaries xgboost --collect-data xgboost
