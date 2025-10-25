@@ -99,6 +99,7 @@ La optimización redujo el MAPE en un 11.2%, consolidando un modelo robusto y re
 Sistema operativo: Windows 10/11, macOS o Linux
 Python: versión 3.10 o superior
 Memoria: ≥ 8 GB RAM (recomendado 16 GB para TensorFlow y XGBoost)
+
 **Dependencias principales:**
 pandas, numpy, scikit-learn, xgboost, tensorflow, matplotlib, joblib, openpyxl
 (para interfaz) tkinter – viene incluido en Python estándar en Windows/macOS
