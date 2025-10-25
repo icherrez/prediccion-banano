@@ -109,6 +109,7 @@ pandas, numpy, scikit-learn, xgboost, tensorflow, matplotlib, joblib, openpyxl
 1️. Clonar el repositorio
 
 git clone https://github.com/icherrez/prediccion-banano.git
+
 cd Modelo Hibrido ML-DL para Pronosticar el Precio de Comercialización del Banano en Ecuador/app
 
 2️. Crear y activar entorno virtual
