@@ -191,7 +191,7 @@ Colores diferenciados por modelo (Ridge, MLP, XGB, LSTM, SuperLearner).
 ---
 
 ## Estructura del proyecto
-
+```
 Modelo Híbrido ML-DL para Pronosticar el Precio de Comercialización del Banano en Ecuador/
 │
 ├── README.md                      # Descripción general del proyecto
@@ -241,8 +241,8 @@ Modelo Híbrido ML-DL para Pronosticar el Precio de Comercialización del Banano
 │   ├── test_model.py              # Pruebas de entrenamiento y predicción
 │   └── test_app.py                # Pruebas de la interfaz ejecutable
 │
-└── LICENSE                        # Tipo de licencia (MIT, Apache 2.0, etc.)
-
+└── LICENSE                        # Tipo de licencia
+```
 
 ---
 ## Consideraciones éticas
