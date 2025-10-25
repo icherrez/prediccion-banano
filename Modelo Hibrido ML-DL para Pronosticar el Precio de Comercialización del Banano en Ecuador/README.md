@@ -110,9 +110,12 @@ git clone https://github.com/<usuario>/<nombre_proyecto>.git
 cd <nombre_proyecto>/app
 
 -2️. Crear y activar entorno virtual
+
 python -m venv venv
+
 En Windows
 venv\Scripts\activate
+
 En macOS / Linux
 source venv/bin/activate
 
