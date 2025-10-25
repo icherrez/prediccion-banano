@@ -228,7 +228,18 @@ Modelo Híbrido ML-DL para Pronosticar el Precio de Comercialización del Banano
 │   ├── manual_usuario.md          # Guia para usuarios finales
 │   ├── optimizacion.md            # Optimización de hiperparámetros
 │   └── planificacion.md           # Planificación inicial
-├── notebooks/ (opcional)    # Jupyter notebooks para experimentación o visualización
+│
+├── notebooks/               # Jupyter notebooks
+│   ├── 01_exploracion.ipynb       # Análisis exploratorio de datos (EDA)
+│   ├── 02_preprocesamiento.ipynb  # Limpieza, transformación y generación de lags
+│   ├── 03_modelado.ipynb          # Entrenamiento de los modelos base y meta-modelo
+│   ├── 04_optimizacion.ipynb      # Optimización de hiperparámetros y validación cruzada
+│   └── 05_evaluacion.ipynb        # Evaluación final, métricas y comparación de resulta
+│
+├── tests/                  # Pruebas unitarias
+│   ├── test_data_processing.py       # Procesamiento de datos
+│   ├── test_model.py                 # Pruebas de modelo
+│   └── test_app.py                   # Pruebas interfaz ejecutable
 │
 └── LICENSE                  # Tipo de licencia (MIT, Apache 2.0, etc.)
 
