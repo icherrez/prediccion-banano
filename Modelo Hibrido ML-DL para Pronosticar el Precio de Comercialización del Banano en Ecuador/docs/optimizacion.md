@@ -109,7 +109,7 @@ Esta configuración consolidó un **MAPE final de 11.84%**, manteniendo un costo
 
 | Aspecto | Configuración Original | Configuración Optimizada | Cambio |
 |----------|------------------------|---------------------------|---------|
-| Métrica principal (MAPE, %) | 13.48 | **11.84** | −12.2 % |
+| Métrica principal (MAPE, %) | 13.48 | **11.84** | −1.64 % |
 | Tiempo de entrenamiento total | 42.5 min | 48.9 min | +15.1 % |
 | Tamaño promedio del modelo | 27.4 MB | 29.2 MB | +6.6 % |
 | Complejidad del modelo | Media | Media–Alta | ↑ ligero incremento |
