@@ -157,6 +157,8 @@ python app.py
 
 - Visualizar resultados y gráfico final dentro de la interfaz
 
+---
+
 ## Interfaz de usuario
 
 **Descripción general**
@@ -186,7 +188,49 @@ Muestra las últimas 5 semanas reales + 5 semanas futuras predichas.
 
 Colores diferenciados por modelo (Ridge, MLP, XGB, LSTM, SuperLearner).
 
+---
+
 ## Estructura del proyecto
+
+Modelo Híbrido ML-DL para Pronosticar el Precio de Comercialización del Banano en Ecuador/
+│
+├── README.md                # Descripción general del proyecto
+│
+├── src/                     # Código fuente principal del modelo
+│   ├── __init__.py          # Marca el paquete principal
+│   ├── data_processing.py   # Funciones de carga, limpieza y generación de lags
+│   ├── model.py             # Definición de los modelos (Ridge, MLP, XGB, LSTM, meta-modelo)
+│   ├── train.py             # Script de entrenamiento (OOF, SuperLearner)
+│   ├── evaluate.py          # Funciones de evaluación y métricas
+│   └── utils.py             # Funciones auxiliares (forecast, escalado, etc.)
+│
+├── app/                     # Aplicación de interfaz gráfica
+│   ├── app.py               # Interfaz principal con Tkinter
+│   ├── requirements.txt     # Dependencias necesarias para ejecutar la app
+│   └── assets/              # Recursos visuales y archivos de demostración
+│       ├── precio_ecuador.xlsx  # Dataset demo usado en modo “Usar datos demo”
+│       └── README.md
+│
+├── models/                  # Modelos entrenados (serializados con joblib)
+│   ├── best_model.pkl       # Versión más reciente (TimeSeriesSplit + RidgeCV)
+│   ├── model_v1.pkl         # Versión inicial (Train/Val/Test simple)
+│   └── README.md            # Documentación de los modelos guardados
+│
+├── data/                    # Datos adicionales no incluidos en assets
+│   ├── README.md            # Explicacion de dataset
+│   └── processed           # Datos procesados
+│       ├── dataset_procesado.xlsx  # Dataset
+│
+├── docs/                     # Documentos principales
+│   ├── analisis_datos.md          # Analisis exploratorio
+│   ├── arquitectura.md            # Arquitectura del modelo hibrido Super Learner
+│   ├── consideraciones_eticas.md  # Analisis de sesgos, privacidad, transparencia, etc.
+│   ├── manual_usuario.md          # Guia para usuarios finales
+│   ├── optimizacion.md            # Optimización de hiperparámetros
+│   └── planificacion.md           # Planificación inicial
+├── notebooks/ (opcional)    # Jupyter notebooks para experimentación o visualización
+│
+└── LICENSE                  # Tipo de licencia (MIT, Apache 2.0, etc.)
 
 ---
 ## Consideraciones éticas
