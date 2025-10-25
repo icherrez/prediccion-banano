@@ -97,33 +97,28 @@ La optimización redujo el MAPE en un 11.2%, consolidando un modelo robusto y re
 **Requisitos del sistema**
 
 Sistema operativo: Windows 10/11, macOS o Linux
-
 Python: versión 3.10 o superior
-
 Memoria: ≥ 8 GB RAM (recomendado 16 GB para TensorFlow y XGBoost)
-
-Dependencias principales:
-
+**Dependencias principales:**
 pandas, numpy, scikit-learn, xgboost, tensorflow, matplotlib, joblib, openpyxl
-
 (para interfaz) tkinter – viene incluido en Python estándar en Windows/macOS
 
 **Instalación paso a paso**
-1️. Clonar el repositorio
+-1️. Clonar el repositorio
 git clone https://github.com/<usuario>/<nombre_proyecto>.git
 cd <nombre_proyecto>/app
 
-2️. Crear y activar entorno virtual
+-2️. Crear y activar entorno virtual
 python -m venv venv
 En Windows
 venv\Scripts\activate
 En macOS / Linux
 source venv/bin/activate
 
-3️. Instalar dependencias
+-3️. Instalar dependencias
 pip install -r requirements.txt
 
-4️. Verificar modelo demo y datos
+-4️. Verificar modelo demo y datos
 
 Asegúrate de que exista el archivo:
 
@@ -132,7 +127,7 @@ app/assets/precio_ecuador.xlsx
 
 Este dataset demo se utiliza cuando el usuario elige “Usar datos demo” al iniciar la aplicación.
 
-5️. Ejecutar la aplicación
+-5️. Ejecutar la aplicación
 python app.py
 
 
