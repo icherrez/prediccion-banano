@@ -135,6 +135,7 @@ El gráfico final muestra la continuidad entre los valores reales y los predicho
 ## 11. Créditos y contacto
 
 **Autores principales:**  
+
 *Kevin Ovalle* – UEES
 
 kevin.ovalle@uees.edu.ec
