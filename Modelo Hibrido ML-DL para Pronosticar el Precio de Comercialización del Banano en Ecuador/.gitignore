@@ -1,0 +1,99 @@
+# ===============================================
+# .gitignore
+# Proyecto: Modelo Hibrido ML-DL para Pronosticar el Precio de Comercialización del Banano en Ecuador
+# Versión: 1.0 (2025)
+# ===============================================
+
+# --- Archivos y carpetas de Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pkl.*
+*.py.class
+*.log
+*.tmp
+
+# --- Carpetas generadas automáticamente ---
+dist/
+build/
+*.spec
+
+# --- Archivos temporales / ejecutables ---
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.bak
+*.swp
+
+# --- Resultados y modelos entrenados ---
+models/
+results/
+!results/README.md
+!models/README.md
+
+# --- Archivos grandes de datos o demo ---
+data/
+!data/README.md
+app/assets/precio_ecuador.xlsx
+
+# --- Archivos de notebooks ---
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# --- Archivos de entorno virtual ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Configuración del IDE ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Archivos de sistema ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Cachés y temporales ---
+.cache/
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+.eggs/
+
+# --- Archivos de pruebas ---
+.coverage
+htmlcov/
+pytest_cache/
+.tox/
+.mypy_cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# --- Documentación generada ---
+docs/_build/
+docs/build/
+*.aux
+*.out
+*.toc
+
+# --- Excepciones: queremos mantener algunos metadatos ---
+!README.md
+!LICENSE
+!requirements.txt
+!manual_usuario.md
+!*.md
+
+# ===============================================
+# Fin del archivo .gitignore
+# ===============================================
