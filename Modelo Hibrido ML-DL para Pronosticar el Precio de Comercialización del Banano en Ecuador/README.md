@@ -157,6 +157,35 @@ python app.py
 
 - Visualizar resultados y gráfico final dentro de la interfaz
 
+## Interfaz de usuario
+
+**Descripción general**
+
+La aplicación cuenta con una interfaz gráfica basada en Tkinter que guía al usuario paso a paso a través del flujo de trabajo:
+
+- Pantalla de inicio:
+Diálogo con dos botones:
+
+Usar datos demo (precio_ecuador.xlsx)
+
+Cargar archivo propio (Excel)
+
+- Ventana principal de progreso:
+
+Muestra mensajes de entrenamiento y validación (incluyendo frases “bananeras” divertidas).
+
+Muestra métricas finales y tabla con los pronósticos de las próximas 5 semanas.
+
+Incluye botón para cerrar al finalizar.
+
+- Visualización integrada del gráfico:
+
+Gráfico matplotlib embebido directamente en la ventana principal.
+
+Muestra las últimas 5 semanas reales + 5 semanas futuras predichas.
+
+Colores diferenciados por modelo (Ridge, MLP, XGB, LSTM, SuperLearner).
+
 ## Estructura del proyecto
 
 ---
