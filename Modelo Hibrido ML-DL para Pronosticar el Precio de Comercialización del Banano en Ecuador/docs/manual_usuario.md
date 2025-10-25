@@ -98,3 +98,57 @@ El gráfico final muestra la continuidad entre los valores reales y los predicho
 ---
 
 
+---
+
+## 8. Errores y validaciones comunes
+
+| Situación | Causa probable | Solución |
+|------------|----------------|-----------|
+| “Cannot find XGBoost Library” | El ejecutable no incluye `xgboost.dll` | Reconstruir con PyInstaller y `--collect-binaries xgboost` |
+| “Archivo no válido” | Formato distinto a las columnas esperadas | Revisar estructura del Excel |
+| “Ventana muy pequeña” | Resolución baja del monitor | Maximizar o redimensionar manualmente |
+
+---
+
+## 9. Consejos de uso y buenas prácticas
+
+- Utilizar al menos **2 años de datos semanales** para mejorar la estabilidad del modelo.  
+- No incluir valores atípicos sin justificación (p. ej. precios fuera del rango histórico).  
+- Evitar modificar manualmente las columnas de lags (`Precio_t-#`).  
+- Mantener el nombre de las columnas en español (`Año`, `Semana`, `Precio`) para compatibilidad.
+
+---
+
+## 10. FAQ (Preguntas frecuentes)
+
+**¿Puedo usar mis propios datos diarios?**  
+> No. El modelo está optimizado para datos *semanales*.
+
+**¿Necesito conexión a Internet?**  
+> No, la aplicación funciona completamente en modo local.
+
+**¿Qué hago si el modelo se detiene?**  
+> Cierre la aplicación y verifique que su Excel esté libre de celdas vacías o formatos erróneos.
+ 
+---
+
+## 11. Créditos y contacto
+
+**Autores principales:**  
+*Kevin Ovalle* – UEES
+
+kevin.ovalle@uees.edu.ec
+
+*Ivan Cherrez* – UEES
+
+icherrez@uees.edu.ec
+  
+
+**Versión:** 1.0 (2025)  
+**Licencia:** MIT – Uso académico y de investigación. 
+
+---
+
+**Fin del manual de usuario.** 
+
+
